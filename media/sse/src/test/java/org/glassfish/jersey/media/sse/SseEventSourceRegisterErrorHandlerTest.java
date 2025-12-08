@@ -111,7 +111,6 @@ public class SseEventSourceRegisterErrorHandlerTest extends JerseyTest {
     }
 
     @Test
-    @Disabled("failed without patch")
     public void testError400() throws InterruptedException {
         WebTarget sseTarget = target("sse/400");
         AtomicReference<Throwable> throwable = new AtomicReference<>();
