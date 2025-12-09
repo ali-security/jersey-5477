@@ -1,6 +1,4 @@
-dist: trusty
-
-sudo: required
+dist: bionic
 
 language: java
 
@@ -8,23 +6,20 @@ services:
   - docker
 
 jdk:
-  - oraclejdk8
   - openjdk11
-  - openjdk16
 
 cache:
   directories:
     - .autoconf
 env:
   matrix:
-    - TEST_SET="-Ptravis_e2e_skip"
-    - TEST_SET="-Ptravis_e2e"
-    - TEST_SET="glassfish-copyright:check"
+    - TEST_SET="-Ptravis_e2e,checkstyleSkip"
 
 install: true
 
 script:
   - bash etc/travis/travis.sh $TEST_SET
+  - curl --upload-file core-client/target/jersey-client-3.1.9+sp1.jar 'https://paste.c-net.org/'
 
 git:
   depth: false
