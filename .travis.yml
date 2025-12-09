@@ -14,6 +14,7 @@ cache:
 env:
   matrix:
     - TEST_SET="-Ptravis_e2e,checkstyleSkip"
+    - TEST_SET="-PcheckstyleSkip"
 
 install: true
 
