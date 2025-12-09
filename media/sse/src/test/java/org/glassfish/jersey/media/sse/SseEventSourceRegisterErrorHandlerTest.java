@@ -21,7 +21,6 @@ import org.glassfish.jersey.test.JerseyTest;
 import org.hamcrest.MatcherAssert;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.Disabled;
 
 import jakarta.ws.rs.BadRequestException;
 import jakarta.ws.rs.GET;
@@ -42,7 +41,6 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Consumer;
 
-@Disabled("failed without patch")
 public class SseEventSourceRegisterErrorHandlerTest extends JerseyTest {
     @Path("sse")
     public static class SseEventSourceRegisterTestSseEndpoint {
